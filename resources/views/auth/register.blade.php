@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -66,5 +66,117 @@
             </div>
             <p class="mt-2 text-center"><a href="/">Masuk Sebagai Tamu</a></p>
         </div>
+    </body>
+</html> -->
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+
+</head>
+<body>
+
+    <div class="site-wrap d-md-flex align-items-stretch">
+        <div class="bg-img" style="background-image: url('images/Car-2.png')"></div>
+        <div class="form-wrap">
+            <div class="form-inner">
+                <h1 class="title text-center">Welcome!</h1>
+                <!-- <p class="caption mb-4">Create your account in seconds.</p> -->
+
+                <form action="/register" method="POST" class="pt-3">
+                    @csrf
+                    <div class="form-floating">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Username" name="name" required>
+                        @error('name')
+                                        <div id="nameHelp" class="form-text">{{ $message }}</div>
+                                    @enderror
+                        <label for="inputUsername">Username</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="inputEmail" placeholder="info@example.com" name="email" required>
+                        @error('email')
+                                        <div id="emailHelp" class="form-text">{{ $message }}</div>
+                                    @enderror
+                        <label for="inputEmail">Email Address</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="phoneNumber" class="form-control @error('phone_number') is-invalid @enderror" id="phoneNumber" placeholder="+6281216007834" name="phone_number" required>
+                        @error('phone_number')
+                                        <div id="phoneNumberHelp" class="form-text">{{ $message }}</div>
+                                    @enderror
+                        <label for="phoneNumber">Phone Number</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <span class="password-show-toggle js-password-show-toggle"><span class="uil"></span></span>
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="inputPassword" placeholder="Password" name="password" required>
+                        @error('password')
+                                        <div id="passwordHelp" class="form-text">{{ $message }}</div>
+                                    @enderror
+                        <label for="inputPassword">Password</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <span class="password-show-toggle js-password-show-toggle"><span class="uil"></span></span>
+                        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="inputPasswordConfirmation" placeholder="Password Confirmation" name="password_confirmation" required>
+                        @error('password_confirmation')
+                                        <div id="passwordConfirmationHelp" class="form-text">{{ $message }}</div>
+                                    @enderror
+                        <label for="inputPasswordConfirmation">Password Confirmation</label>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="notRobotCheck">
+                            <label for="notRobotCheck" class="form-check-label">I'm not robot</label>
+                            <div class="invalid-feedback">
+                            You must agree before submitting.
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid mb-4">
+                        <button type="submit" class="btn btn-primary">Create an account</button>
+                    </div>
+
+                    <div class="mb-2">Already a member? <a href="index.html">Log in</a></div>
+
+                    <div class="social-account-wrap">
+                        <h4 class="mb-4"><span>or continue with</span></h4>
+                        <ul class="list-unstyled social-account d-flex justify-content-between">
+                            <li><a href="#"><img src="images/icon-google.svg" alt="Google logo"></a></li>
+                            <li><a href="#"><img src="images/icon-facebook.svg" alt="Facebook logo"></a></li>
+                            <li><a href="#"><img src="images/icon-apple.svg" alt="Apple logo"></a></li>
+                            <li><a href="#"><img src="images/icon-twitter.svg" alt="Twitter logo"></a></li>
+                        </ul>
+                        <h4 class="mb-4"><a href="/"><span>Login as a guest</span></a></h4>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/custom.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     </body>
 </html>
